@@ -164,8 +164,20 @@ _NOTE: `?size=50` is specific to GitHub images_
 
 You can filter content in an `ng-repeat` using a filter. For example, `ng-repeat="people in peopleArray | limit 3"`. You can add multiple filters that are all separated by `|`.
 
-`ng-click` is a way of handling click events (e.g. button click).
+`ng-click` is a way of handling click events (e.g. button click). Update your `ng-repeat` to include a button below the `img` tag.
 
 ```HTML
-<button ng-click="console.log('Submit was clicked!')">Submit</button>
+<button ng-click="greet(people.name)">Submit</button>
+```
+
+**client.js**
+
+Add a function in scope.
+
+```JavaScript
+// Create a function in scope
+$scope.searchName = function(nameValue) {
+  console.log(nameValue);
+  alert(nameValue);
+}
 ```
